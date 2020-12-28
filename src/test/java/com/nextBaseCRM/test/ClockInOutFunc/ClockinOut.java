@@ -15,6 +15,18 @@ public class ClockinOut {
         driver.findElement(By.name("USER_LOGIN")).sendKeys("helpdesk3@cybertekschool.com");
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser"+ Keys.ENTER);
 
+        String expectedTitle = "(7) Portal";
+        String actualTitle = driver.getTitle();
+
+        if (expectedTitle.equalsIgnoreCase(actualTitle)) {
+            System.out.println("Verified title");
+        } else {
+            System.out.println("Title not verified");
+        }
+
+
+
+
 
 
 
