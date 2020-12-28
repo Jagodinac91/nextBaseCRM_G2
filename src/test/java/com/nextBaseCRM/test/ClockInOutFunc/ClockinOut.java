@@ -15,9 +15,6 @@ public class ClockinOut {
         driver.findElement(By.name("USER_LOGIN")).sendKeys("helpdesk3@cybertekschool.com");
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser"+ Keys.ENTER);
 
-        String expectedTitle = "(7) Portal";
-        String actualTitle = driver.getTitle();
-
 
         driver.findElement(By.id("timeman-container")).click();
         Thread.sleep(2000);
