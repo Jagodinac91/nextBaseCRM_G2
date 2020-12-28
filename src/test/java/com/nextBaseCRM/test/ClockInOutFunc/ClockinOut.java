@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ClockinOut {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
@@ -18,11 +18,14 @@ public class ClockinOut {
         String expectedTitle = "(7) Portal";
         String actualTitle = driver.getTitle();
 
-        if (expectedTitle.equalsIgnoreCase(actualTitle)) {
-            System.out.println("Verified title");
-        } else {
-            System.out.println("Title not verified");
-        }
+
+        driver.findElement(By.id("timeman-container")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.className("tm-popup-button-handler")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.className("tm-popup-button-handler")).click();
+
+
 
 
 
